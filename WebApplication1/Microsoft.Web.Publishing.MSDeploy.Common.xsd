@@ -1,0 +1,572 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/developer/msbuild/2003" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Project">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element maxOccurs="unbounded" name="UsingTask">
+            <xs:complexType>
+              <xs:attribute name="TaskName" type="xs:string" use="required" />
+              <xs:attribute name="AssemblyFile" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="PropertyGroup">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element minOccurs="0" name="ImportByWildcardAfterMicrosoftWebPublishingMSDeployCommonTargets">
+                  <xs:complexType>
+                    <xs:simpleContent>
+                      <xs:extension base="xs:boolean">
+                        <xs:attribute name="Condition" type="xs:string" use="required" />
+                      </xs:extension>
+                    </xs:simpleContent>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="GenerateSampleDeployScriptDependsOn">
+                  <xs:complexType>
+                    <xs:simpleContent>
+                      <xs:extension base="xs:string">
+                        <xs:attribute name="Condition" type="xs:string" use="required" />
+                      </xs:extension>
+                    </xs:simpleContent>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="GenerateSampleDeployScriptAfterTargets" type="xs:string" />
+                <xs:element minOccurs="0" name="BeforeAddDatabasesToSourceManifest">
+                  <xs:complexType>
+                    <xs:simpleContent>
+                      <xs:extension base="xs:string">
+                        <xs:attribute name="Condition" type="xs:string" use="required" />
+                      </xs:extension>
+                    </xs:simpleContent>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="AfterAddDatabasesToSourceManifest">
+                  <xs:complexType>
+                    <xs:simpleContent>
+                      <xs:extension base="xs:string">
+                        <xs:attribute name="Condition" type="xs:string" use="required" />
+                      </xs:extension>
+                    </xs:simpleContent>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="AddDatabasesToSourceManifestDependsOn" type="xs:string" />
+                <xs:element minOccurs="0" name="AddDatabasesToSourceManifestAfterTargets" type="xs:string" />
+                <xs:element minOccurs="0" name="WriteItemsToSourceManifestDependsOn" type="xs:string" />
+                <xs:element minOccurs="0" name="BeforeAddDeclareParametersItemsForDatabaseScript">
+                  <xs:complexType>
+                    <xs:simpleContent>
+                      <xs:extension base="xs:string">
+                        <xs:attribute name="Condition" type="xs:string" use="required" />
+                      </xs:extension>
+                    </xs:simpleContent>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="AfterAddDeclareParametersItemsForDatabaseScript">
+                  <xs:complexType>
+                    <xs:simpleContent>
+                      <xs:extension base="xs:string">
+                        <xs:attribute name="Condition" type="xs:string" use="required" />
+                      </xs:extension>
+                    </xs:simpleContent>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="AddDeclareParametersItemsForDatabaseScriptDependsOn" type="xs:string" />
+                <xs:element minOccurs="0" name="InsertEFCodeFirstDeployWebCofigDependsOn" type="xs:string" />
+                <xs:element minOccurs="0" name="InsertEFCodeFirstDeployWebCofigBeforeTargets" type="xs:string" />
+                <xs:element minOccurs="0" name="PostInsertEFCodeFirstDeployWebCofigDependsOn" type="xs:string" />
+                <xs:element minOccurs="0" name="InsertEFCodeFirstDeployWebCofigCoreDependsOn" type="xs:string" />
+                <xs:element minOccurs="0" name="PreInsertEFCodeFirstDeployWebCofigDependsOn" type="xs:string" />
+                <xs:element minOccurs="0" name="PreInsertEFCodeFirstDeployWebCofigBeforeTarget" type="xs:string" />
+                <xs:element minOccurs="0" name="PublishDatabases">
+                  <xs:complexType>
+                    <xs:simpleContent>
+                      <xs:extension base="xs:string">
+                        <xs:attribute name="Condition" type="xs:string" use="required" />
+                      </xs:extension>
+                    </xs:simpleContent>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="CollectDatabasesToPublishDependsOn" type="xs:string" />
+                <xs:element minOccurs="0" name="HandleEFCodeFirstDataMigrationDependsOn" type="xs:string" />
+                <xs:element minOccurs="0" name="ParseSQLScriptForMSDeployParametersDependsOn" type="xs:string" />
+                <xs:element minOccurs="0" name="ProcessPublishDatabaseSettingsDependsOn" type="xs:string" />
+                <xs:element minOccurs="0" name="InsertEFCodeFirstDeployWebCofig">
+                  <xs:complexType>
+                    <xs:simpleContent>
+                      <xs:extension base="xs:string">
+                        <xs:attribute name="Condition" type="xs:string" use="required" />
+                      </xs:extension>
+                    </xs:simpleContent>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="InsertEFCodeFirstDeployWebCofigIntermediateOutput">
+                  <xs:complexType>
+                    <xs:simpleContent>
+                      <xs:extension base="xs:string">
+                        <xs:attribute name="Condition" type="xs:string" use="required" />
+                      </xs:extension>
+                    </xs:simpleContent>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="InsertEFCodeFirstDeployWebCofigLocation">
+                  <xs:complexType>
+                    <xs:simpleContent>
+                      <xs:extension base="xs:string">
+                        <xs:attribute name="Condition" type="xs:string" use="required" />
+                      </xs:extension>
+                    </xs:simpleContent>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="Microsoft_Web_Publishing_MSDeploy_Common_targets_Imported" type="xs:string" />
+                <xs:element minOccurs="0" name="ImportByWildcardBeforeMicrosoftWebPublishingMSDeployCommonTargets">
+                  <xs:complexType>
+                    <xs:simpleContent>
+                      <xs:extension base="xs:boolean">
+                        <xs:attribute name="Condition" type="xs:string" use="required" />
+                      </xs:extension>
+                    </xs:simpleContent>
+                  </xs:complexType>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Import">
+            <xs:complexType>
+              <xs:attribute name="Project" type="xs:string" use="required" />
+              <xs:attribute name="Condition" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Target">
+            <xs:complexType mixed="true">
+              <xs:sequence minOccurs="0">
+                <xs:choice maxOccurs="unbounded">
+                  <xs:element name="ItemGroup">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element minOccurs="0" name="FileWrites">
+                          <xs:complexType>
+                            <xs:attribute name="Include" type="xs:string" use="required" />
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="MsDeploySourceProviderSetting">
+                          <xs:complexType>
+                            <xs:sequence minOccurs="0">
+                              <xs:element name="Path" type="xs:string" />
+                              <xs:element name="EncryptPassword" type="xs:string" />
+                            </xs:sequence>
+                            <xs:attribute name="Remove" type="xs:string" use="optional" />
+                            <xs:attribute name="Include" type="xs:string" use="optional" />
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="MsDeployDestinationProviderSetting">
+                          <xs:complexType>
+                            <xs:sequence minOccurs="0">
+                              <xs:element name="Path" type="xs:string" />
+                              <xs:element name="EncryptPassword" type="xs:string" />
+                            </xs:sequence>
+                            <xs:attribute name="Remove" type="xs:string" use="optional" />
+                            <xs:attribute name="Include" type="xs:string" use="optional" />
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element minOccurs="0" name="_MsDeployDeclareParametersNotExclude">
+                          <xs:complexType>
+                            <xs:attribute name="Include" type="xs:string" use="required" />
+                            <xs:attribute name="Condition" type="xs:string" use="required" />
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element minOccurs="0" name="MsDeploySourceManifest">
+                          <xs:complexType>
+                            <xs:attribute name="Include" type="xs:string" use="required" />
+                            <xs:attribute name="Condition" type="xs:string" use="required" />
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="_VsPublish_DatabaseToPackage_DeclareParameters">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element minOccurs="0" name="Element" type="xs:string" />
+                              <xs:element name="Kind" type="xs:string" />
+                              <xs:element minOccurs="0" name="Scope" type="xs:string" />
+                              <xs:element minOccurs="0" name="Match" type="xs:string" />
+                              <xs:element minOccurs="0" name="Description" type="xs:string" />
+                              <xs:element minOccurs="0" name="DefaultValue" type="xs:string" />
+                              <xs:element minOccurs="0" name="Value" type="xs:string" />
+                              <xs:element minOccurs="0" name="Tags" type="xs:string" />
+                            </xs:sequence>
+                            <xs:attribute name="Include" type="xs:string" use="required" />
+                            <xs:attribute name="Condition" type="xs:string" use="required" />
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element minOccurs="0" name="MsDeployDeclareParameters">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="Priority" type="xs:string" />
+                            </xs:sequence>
+                            <xs:attribute name="Include" type="xs:string" use="required" />
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element minOccurs="0" name="_DbDacFxDestinationPathesToPublish">
+                          <xs:complexType>
+                            <xs:attribute name="Include" type="xs:string" use="required" />
+                            <xs:attribute name="Condition" type="xs:string" use="required" />
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="FilesForPackagingFromProject">
+                          <xs:complexType>
+                            <xs:attribute name="Remove" type="xs:string" use="optional" />
+                            <xs:attribute name="Condition" type="xs:string" use="required" />
+                            <xs:attribute name="Include" type="xs:string" use="optional" />
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element minOccurs="0" name="_InsertEFCodeFirstDeployContextNames">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="TransformXMLFragement_CSInsert" type="xs:string" />
+                              <xs:element name="TransformXMLFragement_Deploy" type="xs:string" />
+                            </xs:sequence>
+                            <xs:attribute name="Include" type="xs:string" use="required" />
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element minOccurs="0" name="MSDeployParameterValue">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="ParameterValue" type="xs:string" />
+                              <xs:element name="Description" type="xs:string" />
+                              <xs:element name="UpdateDestWebConfig" type="xs:string" />
+                              <xs:element name="AllowUIUpdate" type="xs:string" />
+                            </xs:sequence>
+                            <xs:attribute name="Include" type="xs:string" use="required" />
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element minOccurs="0" name="_WebConfigsToInsertEFCodeFirstDeployContextOuputDirectories">
+                          <xs:complexType>
+                            <xs:attribute name="Include" type="xs:string" use="required" />
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element minOccurs="0" name="_WebConfigsToInsertEFCodeFirstDeployContext">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="TransformOriginalFolder" type="xs:string" />
+                              <xs:element name="TransformOutputFile" type="xs:string" />
+                              <xs:element name="TransformScope" type="xs:string" />
+                            </xs:sequence>
+                            <xs:attribute name="Include" type="xs:string" use="required" />
+                            <xs:attribute name="Condition" type="xs:string" use="required" />
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element minOccurs="0" name="_WebConfigsToInsertEFCodeFirstDeployContextOuputFiles">
+                          <xs:complexType>
+                            <xs:simpleContent>
+                              <xs:extension base="xs:string">
+                                <xs:attribute name="Include" type="xs:string" use="required" />
+                              </xs:extension>
+                            </xs:simpleContent>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element minOccurs="0" name="_DatabasesToPackageForEFCodeFirst">
+                          <xs:complexType>
+                            <xs:simpleContent>
+                              <xs:extension base="xs:string">
+                                <xs:attribute name="Include" type="xs:string" use="required" />
+                                <xs:attribute name="Condition" type="xs:string" use="required" />
+                              </xs:extension>
+                            </xs:simpleContent>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element minOccurs="0" name="_DatabasesToPackageForSQL">
+                          <xs:complexType>
+                            <xs:simpleContent>
+                              <xs:extension base="xs:string">
+                                <xs:attribute name="Include" type="xs:string" use="required" />
+                                <xs:attribute name="Condition" type="xs:string" use="required" />
+                              </xs:extension>
+                            </xs:simpleContent>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                      <xs:attribute name="Condition" type="xs:string" use="optional" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="PropertyGroup">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:choice maxOccurs="unbounded">
+                          <xs:element name="GenerateSampleDeployScriptSourceType">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute name="Condition" type="xs:string" use="optional" />
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="GenerateSampleDeployScriptSourceFileName">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute name="Condition" type="xs:string" use="optional" />
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="_WebConfigToInsertEFCodeFirstDeployContext_Identity" type="xs:string" />
+                          <xs:element name="_WebConfigToInsertEFCodeFirstDeployContext_TransformOutputFile" type="xs:string" />
+                          <xs:element name="_WebConfigsToInsertEFCodeFirstDeployContext_TransformScope" type="xs:string" />
+                          <xs:element name="_WebConfigsToInsertEFCodeFirstDeployContext_Transform" type="xs:string" />
+                          <xs:element name="DeployParameterEFCodeFirstConnectionStringDescription">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute name="Condition" type="xs:string" use="required" />
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="_WebConfigsToInsertEFCodeFirstDeployContextOuputDirectories" type="xs:string" />
+                          <xs:element name="_WebConfigsToInsertEFCodeFirstDeployContextOuput" type="xs:string" />
+                          <xs:element name="GenerateSampleDeployScriptSourceRoot" type="xs:string" />
+                          <xs:element name="GenerateSampleDeployScriptDestinationType" type="xs:string" />
+                          <xs:element name="GenerateSampleDeployScriptDestinationRoot" />
+                          <xs:element name="GenerateSampleDeployScriptParameters" type="xs:string" />
+                          <xs:element name="_ScriptGenerateSampleDeployScriptReadMeLocation" type="xs:string" />
+                          <xs:element name="_MSdeployFwdLink" type="xs:string" />
+                          <xs:element name="_SampleDeployCmdFwdLink" type="xs:string" />
+                        </xs:choice>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="SqlScriptPreprocessSqlVariables">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="Output">
+                          <xs:complexType>
+                            <xs:attribute name="TaskParameter" type="xs:string" use="required" />
+                            <xs:attribute name="ItemName" type="xs:string" use="required" />
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                      <xs:attribute name="UnsupportedKeywords" type="xs:string" use="required" />
+                      <xs:attribute name="CheckForUnsupportCommands" type="xs:string" use="required" />
+                      <xs:attribute name="TreadSqlScriptUnsupportedCommandsAsWarning" type="xs:string" use="required" />
+                      <xs:attribute name="SqlScriptFile" type="xs:string" use="required" />
+                      <xs:attribute name="DestinationGroup" type="xs:string" use="required" />
+                      <xs:attribute name="ResolveIncludes" type="xs:string" use="required" />
+                      <xs:attribute name="BatchDelimiter" type="xs:string" use="required" />
+                      <xs:attribute name="Condition" type="xs:string" use="required" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="MakeDir">
+                    <xs:complexType>
+                      <xs:attribute name="Directories" type="xs:string" use="required" />
+                      <xs:attribute name="Condition" type="xs:string" use="required" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element maxOccurs="unbounded" name="CreateProviderList">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element maxOccurs="unbounded" name="Output">
+                          <xs:complexType>
+                            <xs:attribute name="TaskParameter" type="xs:string" use="required" />
+                            <xs:attribute name="ItemName" type="xs:string" use="required" />
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                      <xs:attribute name="ProjectFileFullPath" type="xs:string" use="required" />
+                      <xs:attribute name="ProvidersXml" type="xs:string" use="optional" />
+                      <xs:attribute name="IntermediateOutputPath" type="xs:string" use="required" />
+                      <xs:attribute name="MSDeployVersionsToTry" type="xs:string" use="required" />
+                      <xs:attribute name="UseMSDeployExe" type="xs:string" use="required" />
+                      <xs:attribute name="MSDeployExePath" type="xs:string" use="required" />
+                      <xs:attribute name="ImportInSyncCheck" type="xs:string" use="required" />
+                      <xs:attribute name="LocalDBVersionToUseForSqlExpress" type="xs:string" use="required" />
+                      <xs:attribute name="Condition" type="xs:string" use="required" />
+                      <xs:attribute name="ProvidersFile" type="xs:string" use="optional" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="WriteLinesToFile">
+                    <xs:complexType>
+                      <xs:attribute name="Condition" type="xs:string" use="optional" />
+                      <xs:attribute name="Encoding" type="xs:string" use="required" />
+                      <xs:attribute name="File" type="xs:string" use="required" />
+                      <xs:attribute name="Lines" type="xs:string" use="required" />
+                      <xs:attribute name="Overwrite" type="xs:string" use="required" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="CopyPipelineFiles">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="Output">
+                          <xs:complexType>
+                            <xs:attribute name="TaskParameter" type="xs:string" use="required" />
+                            <xs:attribute name="ItemName" type="xs:string" use="required" />
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                      <xs:attribute name="PipelineItems" type="xs:string" use="required" />
+                      <xs:attribute name="SourceDirectory" type="xs:string" use="required" />
+                      <xs:attribute name="TargetDirectory" type="xs:string" use="required" />
+                      <xs:attribute name="SkipMetadataExcludeTrueItems" type="xs:string" use="required" />
+                      <xs:attribute name="UpdateItemSpec" type="xs:string" use="required" />
+                      <xs:attribute name="DeleteItemsMarkAsExcludeTrue" type="xs:string" use="required" />
+                      <xs:attribute name="Condition" type="xs:string" use="required" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="Delete">
+                    <xs:complexType>
+                      <xs:attribute name="Files" type="xs:string" use="required" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="GetPublishingLocalizedString">
+                    <xs:complexType>
+                      <xs:sequence minOccurs="0">
+                        <xs:element name="Output">
+                          <xs:complexType>
+                            <xs:attribute name="TaskParameter" type="xs:string" use="required" />
+                            <xs:attribute name="PropertyName" type="xs:string" use="optional" />
+                            <xs:attribute name="ItemName" type="xs:string" use="optional" />
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                      <xs:attribute name="ID" type="xs:string" use="required" />
+                      <xs:attribute name="Importance" type="xs:string" use="optional" />
+                      <xs:attribute name="Condition" type="xs:string" use="optional" />
+                      <xs:attribute name="ArgumentCount" type="xs:unsignedByte" use="optional" />
+                      <xs:attribute name="Arguments" type="xs:string" use="optional" />
+                      <xs:attribute name="LogType" type="xs:string" use="optional" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="EscapeXMLString">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="Output">
+                          <xs:complexType>
+                            <xs:attribute name="TaskParameter" type="xs:string" use="required" />
+                            <xs:attribute name="PropertyName" type="xs:string" use="required" />
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                      <xs:attribute name="Source" type="xs:string" use="required" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="ParameterizeTransformXml">
+                    <xs:complexType>
+                      <xs:simpleContent>
+                        <xs:extension base="xs:string">
+                          <xs:attribute name="Source" type="xs:string" use="required" />
+                          <xs:attribute name="IsSourceAFile" type="xs:string" use="required" />
+                          <xs:attribute name="Transform" type="xs:string" use="required" />
+                          <xs:attribute name="IsTransformAFile" type="xs:string" use="required" />
+                          <xs:attribute name="Destination" type="xs:string" use="required" />
+                          <xs:attribute name="IsDestinationAFile" type="xs:string" use="required" />
+                          <xs:attribute name="Scope" type="xs:string" use="required" />
+                          <xs:attribute name="StackTrace" type="xs:string" use="required" />
+                          <xs:attribute name="SourceRootPath" type="xs:string" use="required" />
+                        </xs:extension>
+                      </xs:simpleContent>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="CallTarget">
+                    <xs:complexType>
+                      <xs:attribute name="Targets" type="xs:string" use="required" />
+                      <xs:attribute name="RunEachTargetSeparately" type="xs:boolean" use="required" />
+                      <xs:attribute name="Condition" type="xs:string" use="required" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="DeployParameterIISAppConnectionStringDescription">
+                    <xs:complexType>
+                      <xs:attribute name="Condition" type="xs:string" use="required" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="SortParametrsByPriority">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="Output">
+                          <xs:complexType>
+                            <xs:attribute name="TaskParameter" type="xs:string" use="required" />
+                            <xs:attribute name="ItemName" type="xs:string" use="required" />
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                      <xs:attribute name="Parameters" type="xs:string" use="required" />
+                      <xs:attribute name="OptimisticParameterDefaultValue" type="xs:string" use="required" />
+                      <xs:attribute name="OptimisticParameterMetadataName" type="xs:string" use="required" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="RemoveDuplicates">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="Output">
+                          <xs:complexType>
+                            <xs:attribute name="TaskParameter" type="xs:string" use="required" />
+                            <xs:attribute name="ItemName" type="xs:string" use="required" />
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                      <xs:attribute name="Inputs" type="xs:string" use="required" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="Message">
+                    <xs:complexType>
+                      <xs:attribute name="Text" type="xs:string" use="required" />
+                      <xs:attribute name="Condition" type="xs:string" use="required" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="MSdeploy">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="Output">
+                          <xs:complexType>
+                            <xs:attribute name="TaskParameter" type="xs:string" use="required" />
+                            <xs:attribute name="PropertyName" type="xs:string" use="required" />
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                      <xs:attribute name="PreviewCommandLineOnly" type="xs:string" use="required" />
+                      <xs:attribute name="Verb" type="xs:string" use="required" />
+                      <xs:attribute name="Source" type="xs:string" use="required" />
+                      <xs:attribute name="Destination" type="xs:string" use="required" />
+                      <xs:attribute name="DisableLink" type="xs:string" use="required" />
+                      <xs:attribute name="EnableLink" type="xs:string" use="required" />
+                      <xs:attribute name="SkipRuleItems" type="xs:string" use="required" />
+                      <xs:attribute name="ExePath" type="xs:string" use="required" />
+                      <xs:attribute name="ImportSetParametersItems" type="xs:string" use="optional" />
+                      <xs:attribute name="WhatIf" type="xs:string" use="optional" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="ExportParametersFile">
+                    <xs:complexType>
+                      <xs:attribute name="Parameters" type="xs:string" use="required" />
+                      <xs:attribute name="OptimisticParameterDefaultValue" type="xs:string" use="required" />
+                      <xs:attribute name="SetParameterFile" type="xs:string" use="required" />
+                      <xs:attribute name="GenerateFileEvenIfEmpty" type="xs:string" use="required" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="CreateProperty">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="Output">
+                          <xs:complexType>
+                            <xs:attribute name="TaskParameter" type="xs:string" use="required" />
+                            <xs:attribute name="PropertyName" type="xs:string" use="required" />
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                      <xs:attribute name="Value" type="xs:string" use="required" />
+                    </xs:complexType>
+                  </xs:element>
+                </xs:choice>
+              </xs:sequence>
+              <xs:attribute name="Name" type="xs:string" use="required" />
+              <xs:attribute name="DependsOnTargets" type="xs:string" use="optional" />
+              <xs:attribute name="Condition" type="xs:string" use="optional" />
+              <xs:attribute name="BeforeTargets" type="xs:string" use="optional" />
+              <xs:attribute name="Inputs" type="xs:string" use="optional" />
+              <xs:attribute name="Outputs" type="xs:string" use="optional" />
+              <xs:attribute name="AfterTargets" type="xs:string" use="optional" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

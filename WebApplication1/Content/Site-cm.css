@@ -1,0 +1,1443 @@
+﻿/* http://meyerweb.com/eric/tools/css/reset/ */
+/* v1.0 | 20080212 */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+
+    ul {
+        list-style: none;
+    }
+
+    blockquote,
+
+    q {
+        quotes: none;
+    }
+
+    blockquote:before,
+
+    blockquote:after,
+
+    q:before,
+
+    q:after {
+        content: '';
+        content: none;
+    }
+
+    /* remember to define focus styles! */
+    :focus {
+        outline: 0;
+    }
+
+/* remember to highlight inserts somehow! */
+ins {
+    text-decoration: none;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+body {
+    background-color: #0F0F0F;
+    color: #F4FFE4;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 12px;
+    line-height: 12px;
+    padding: 0 0 115px 0;
+}
+
+body
+    .ticker {
+        padding-bottom: 0px;
+    }
+
+a {
+    color: #fff;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+a:visited {
+    
+}
+
+a:hover {
+    color: #9C6;
+}
+
+    .left {
+        float: left;
+    }
+
+    .right {
+        float: right;
+    }
+
+    .clear {
+        clear: both;
+        line-height: 0;
+        font-size: 0;
+        height: 0;
+    }
+
+#outer {
+    width: 1055px;
+    min-width: 920px;
+    margin: 0 auto;
+}
+
+    .ad {
+        /* 120 x 600 */
+        float: left;
+        width: 120px;
+        padding-top: 150px;
+    }
+
+    .ad p {
+        font-family: "Gill Sans MT", Helvetica, Arial, sans-serif;
+        margin-bottom: 30px;
+    }
+
+    .ad a img {
+        margin: 5px 0;
+    }
+
+    .ad p.msg {
+        text-align: center;
+    }
+
+    .padl {
+        padding-left: 15px;
+    }
+
+#content {
+    padding: 0 0 0 15px;
+    width: 785px;
+    float: left;
+}
+
+body.ticker #content {
+    float: none;
+    margin: 0 auto;
+    width: auto;
+    padding: 0;
+}
+
+    .header {
+        width: 785px;
+        margin: 0 auto;
+        border-bottom: 2px solid #fff;
+        padding: 0 0 5px 0;
+        position: relative;
+    }
+
+    .header.orderbook {
+        width: 572px;
+    }
+
+    .header.timesales {
+        width: 400px;
+    }
+
+    .header.ticker {
+        width: auto;
+        padding: 0 50px;
+    }
+
+    .header h1 {
+        font-family: "Gill Sans MT", Helvetica, Arial, sans-serif;
+        font-size: 22px;
+        font-weight: bold;
+        padding: 20px 0 10px 0;
+        text-shadow: 0 1px 0 #000;
+    }
+
+    .header p {
+        font-family: "Gill Sans MT", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .addthis_toolbox {
+        margin: 10px 0 15px 0;
+        height: 16px;
+    }
+
+#nav {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font: 14px/1.0em "Gill Sans MT", Helvetica, Arial, sans-serif;
+    cursor: default;
+}
+
+    .header.ticker #nav {
+        right: 50px;
+    }
+
+#nav > li {
+    border: 1px solid #333;
+    padding: 4px 4px 6px 4px;
+    border-radius: 3px;
+}
+
+#nav li ul {
+    display: none;
+    position: absolute;
+    top: 23px;
+    right: 0px;
+    width: 125px;
+    background-color: #ccc;
+    padding: 10px 0;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    box-shadow: 0 3px 5px #000;
+}
+
+#nav > li:hover {
+    background-color: #333;
+}
+
+#nav > li:hover ul {
+    display: block;
+}
+
+#nav li ul li {
+    float: none;
+}
+
+#nav li ul li a {
+    display: block;
+    padding: 6px 5px;
+    background-color: #ccc;
+    color: #333;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #fff;
+}
+
+#nav li ul li a:hover {
+    background-color: #333;
+    color: #fff;
+    text-shadow: 0 1px 0 #000;
+}
+
+    .controls {
+        border-top: 2px solid #fff;
+        padding-top: 5px;
+        line-height: 14px;
+    }
+
+#controls {
+    border-top: 2px solid #fff;
+    padding-top: 5px;
+    line-height: 14px;
+	display: none;
+}
+
+#calculators {
+    border-top: 2px solid #fff;
+    padding: 5px 0 5px 0;
+    display: none;
+}
+
+#calculators .calc_fields {
+    width: 280px;
+}
+
+#calculators p {
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 12px;
+    line-height: 12px;
+    padding: 0;
+    margin: 12px 0 0 0;
+    cursor: default;
+}
+
+#calculators input {
+    margin: 5px 0 0 0;
+    padding: 2px;
+    border: 1px solid #0f0f0f;
+    background-color: #0f0f0f;
+    color: #f4ffe4;
+    width: 200px;
+}
+
+#calculators input:hover {
+    border: 1px solid #363;
+}
+
+#calculators input:focus {
+    border: 1px solid #9c6;
+}
+
+#calculators h3 {
+	font-family: "Gill Sans MT",Helvetica,Arial,sans-serif;
+	font-size: 16px;
+	line-height: 1.25em;
+	cursor: default;
+}
+
+#calculators h4 {
+	font-family: "Gill Sans MT",Helvetica,Arial,sans-serif;
+	font-size: 20px;
+	margin: 12px 0;
+	cursor: default;
+}
+
+    .statuses {
+        padding: 5px 0;
+    }
+
+#status {
+    
+}
+
+#lm {
+    display: inline-block;
+    width: 120px;
+}
+
+#ticker {
+    margin: 1.0em auto;
+    width: 785px;
+}
+
+#ticker table {
+    margin: 0 auto;
+}
+
+#ticker table tr {
+    
+}
+
+#ticker table tr th {
+    padding: 0 10px;
+    text-align: center;
+    color: #fff;
+}
+
+#ticker table tr td {
+    padding: 0 5px;
+    text-align: center;
+}
+
+#ticker table #ticker_table tr td {
+    text-align: right;
+}
+
+#ticker table #ticker_table tr td:first-child {
+    text-align: left;
+}
+
+#ticker table.combined {
+    width: 400px;
+    float: left;
+    margin: 0 0 0 86px;
+}
+
+#ticker canvas {
+	width: 190px;
+	height: 25px;
+	float: right;
+}
+
+#ticker.all {
+    width: auto;
+}
+
+#ticker.all table {
+    margin: 1.0em auto;
+}
+
+#ticker.all table tr {
+    
+}
+
+#ticker.all table tr th {
+    font-size: 1.1em;
+    padding-bottom: 3px;
+}
+
+#ticker.all table tr td {
+    text-align: right;
+    padding: 1px 5px;
+}
+
+#ticker.all table tr:hover td {
+    background-color: #333;
+}
+
+#fxGrid {
+    padding-bottom: 100px;
+}
+
+#fxGrid table {
+    margin: 0 auto;
+}
+
+#fxGrid td {
+    padding: 2px 4px;
+    text-align: right;
+}
+
+#fxGrid td.gridLabel {
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+}
+
+#chart_wrap {
+    width: 785px;
+    margin: 0 auto;
+}
+
+#chart {
+    height: 300px;
+}
+
+#chart_control {
+    color: #555;
+}
+
+#chart_control:hover {
+    color: #f4ffe4;
+}
+
+#chart_control a {
+    padding-right: 5px;
+    color: #666;
+}
+
+#chart_control:hover a {
+    color: #fff;
+}
+
+#chart_control a:hover {
+    color: #9c6;
+}
+
+#chart_control a.current {
+    cursor: default;
+    text-decoration: none;
+    color: #f4ffe4;
+}
+
+#chart canvas {
+    position: absolute;
+    cursor: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+#content h2 {
+    text-align: center;
+    font-family: "Gill Sans MT", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 20px 0 15px 0;
+}
+
+#timesales {
+    margin: 1.0em;
+}
+
+#timesales table {
+    margin: 0 auto;
+}
+
+#timesales table tr {
+    cursor: default; 
+}
+
+#timesales table tr td {
+    padding: 1px 5px;
+    text-align: right;
+    border-bottom: 1px solid #0f0f0f;
+}
+/* Style for alternating trades */
+
+#timesales
+    table
+        tr
+            .alt
+                td
+                {
+                    background-color: #2d3033;
+                }
+                /* DPFS ? */
+                /*#timesales table tr:hover td { background-color: #001729; }*/
+
+#orderbook
+{
+    margin: 1.0em auto;
+    width: 572px;
+}
+
+#orderbook
+    > div
+    {
+        width: 285px;
+    }
+
+#orderbook
+    table
+    {
+        margin: 0 auto;
+        width: 285px;
+        max-width: 285px;
+        overflow: hidden;
+    }
+
+#orderbook
+    table
+        tr
+        {
+
+        }
+
+#orderbook
+    table
+        tr
+            th,
+            #timesales
+                table
+                    tr
+                        th
+                        {
+                            padding: 2px 10px 3px 10px;
+                            color: #fff;
+                            border-bottom: 1px solid #999;
+                            margin-bottom: 3px;
+                        }
+
+#orderbook
+    table
+        tr
+            th
+                .title
+                {
+                    font-family: 'Gill Sans MT',Helvetica,Arial,sans-serif;
+                    font-size: 16px;
+                    padding: 0.5em 0 0.5em 0;
+                    border: 0;
+                }
+#timesales
+    table
+        tr
+            th
+                .title
+                {
+                    font-family: 'Gill Sans MT',Helvetica,Arial,sans-serif;
+                    font-size: 16px;
+                    padding: 0.5em 0 0.5em 0;
+                    border: 0;
+                }
+
+#orderbook
+    table
+        tr
+            td
+            {
+                padding: 0 5px;
+                text-align: right;
+                width: 85px;
+                overflow: hidden;
+            }
+
+#orderbook
+    table
+        tr
+            td
+                .priceCell
+                {
+                    background-color: #1A1C1A;
+                }
+
+#orderbook
+    table
+        tr
+            td
+                .sumCell
+                {
+                    color: #7A7F72;
+                }
+
+#orderbook
+    table
+        tbody
+            tr
+                :first-child
+                    td
+                    {
+                        padding-top: 3px;
+                    }
+
+#orderbook
+    table
+        tr
+            :hover
+                td
+                {
+                    background-color: #333;
+                }
+
+#orderbook
+    table
+        tr
+            .newOrder
+                td
+                {
+                    color: #5B9ACC;
+                    /* Light Blue */
+                }
+
+#orderbook
+    table
+        tr
+            .wholeNumberRow
+                td
+                {
+                    font-weight: bold;
+                    color: #fff;
+                }
+
+#data_wrapper
+{
+    width: 785px;
+/*"0" all the way to the left with no qoutes*/ margin: 0 auto;
+}
+
+#data_wrapper
+    #timesales
+    {
+        float: left;
+        width: 190px;
+        margin: 5px 0 20px 0;
+    }
+
+#data_wrapper
+    #orderbook
+    {
+        float: left;
+        margin: 5px 20px 0 0;
+    }
+
+#data_wrapper
+    #orderbook
+    {
+
+    }
+
+#data_wrapper
+    #timesales
+    {
+
+    }
+
+    .data
+    {
+        width: 450px;
+        margin: 0 auto;
+    }
+
+    .data
+        table
+        {
+                width: 100%;
+        }
+
+    .data
+        th
+        {
+            text-align: left;
+        }
+
+    .data
+        table
+            .r
+            {
+                    text-align: right;
+            }
+
+    .data
+        table
+            tr
+                :hover
+                    td
+                    {
+                        background-color: #333;
+                    }
+
+#console
+{
+    line-height: 13px;
+    /* consoleRows*(line-height)+3 */
+    height: 68px;
+    background-color: #090909;
+    border-top: 1px solid #fff;
+    overflow: auto;
+}
+
+#footer
+{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+#footer
+    p
+        .footerinfo
+        {
+            font-family: "Gill Sans MT", Helvetica, Arial, sans-serif;
+            text-align: center;
+            font-size: 12px;
+            padding: 5px 0 5px 0;
+            line-height: 18px;
+            background-color: #0f0f0f;
+        }
+
+#output
+    {
+
+    }
+
+#output
+    p
+    {
+
+    }
+
+    .success
+        {
+            background-color: #393;
+            color: #fff;
+        }
+
+    .warning
+        {
+            background-color: #D9CC0C;
+            color: #000;
+        }
+
+    .error
+        {
+            background-color: #933;
+            color: #fff;
+        }
+
+    .depth
+        {
+            color: #ccc;
+        }
+
+    .trade
+        {
+            color: #fff;
+            background-color: #001729;
+        }
+
+    .timestamp
+        {
+
+        }
+
+    .up
+        {
+            color: #9C6;
+        }
+
+    .down
+        {
+            color: #F00017;
+        }
+
+    .high
+        {
+            background-color: #9C6;
+            color: #fff;
+        }
+
+    .low
+        {
+            background-color: #B00017;
+            color: #fff;
+        }
+
+    .tick
+        {
+            -webkit-transition: color, 0.5s, ease-out;
+        }
+
+    .gold
+        {
+            color: #ffc200;
+        }
+
+    .insig
+        {
+            color: #30332d;
+        }
+
+    .clear
+        {
+            clear: both;
+            display: block;
+            height: 0;
+            line-height: 0;
+        }
+
+#ws_modal
+    {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 400px;
+        height: 120px;
+        margin: -80px 0 0 -200px;
+        background-color: #933;
+        border: 1px solid #fff;
+        border-radius: 3px;
+        text-align: center;
+        display: none;
+        z-index: 14;
+    }
+
+#ws_modal
+    h1
+    {
+        margin-top: 30px;
+        font-size: 14px;
+    }
+
+#ws_modal
+    p
+    {
+        margin-top: 20px;
+    }
+
+#ws_modal
+    a
+    {
+        color: #fff;
+    }
+
+#info_modal
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 400px;
+    height: 200px;
+    margin: -166px 0 0 -220px;
+    background-color: #eee;
+    border: 2px solid #D9CC0C;
+    border-radius: 3px;
+    text-align: center;
+    color: #161616;
+    padding: 20px;
+    display: none;
+    z-index: 15;
+}
+
+#info_modal
+    h1
+    {
+        margin-top: 30px;
+        font-size: 14px;
+    }
+
+#info_modal
+    p
+    {
+        margin-top: 20px;
+        text-align: left;
+        line-height: 15px;
+    }
+
+#info_modal
+    a
+    {
+        color: #933;
+    }
+
+#info_modal
+    a
+        :hover
+        {
+            color: #000;
+        }
+
+#announce
+{
+    cursor: pointer;
+}
+
+#announce p
+{
+    line-height: 1.0em;
+    text-align: center;
+    padding: 5px 0 8px 0;
+    border: 1px solid #693;
+    border-radius: 5px;
+    background-color: #9c6;
+    text-shadow: 0 1px 0 #cf9;
+    color: #030;
+    font-weight: bold;
+    box-shadow: inset 0 1px 0 #fff, 0 1px 0 #000;;
+}
+
+/* Fixed footer stuff: http://limpid.nl/lab/css/fixed/footer */
+@media screen
+    {
+        body > div      /* Matches any "div" element that is a child of "body" */
+            #console
+                {
+            position:
+        fixed;
+    }
+}*
+html
+    body
+        {
+            overflow
+                :hidden;
+                    }*
+                        html
+                            div
+                        #content
+                    {
+                height:100%;
+            overflow:auto;
+        }
+
+/* Full-width responsive */
+@media
+    all
+        and(min-width: 1855px)
+        {
+            body
+                .wide
+                
+                    #outer
+                    {
+                        width: 1855px;
+                    }
+            body
+                .wide
+                
+                    #content,
+            body
+                .wide
+                
+                .header
+                    {
+                        width: 1585px;
+                    }
+            body
+                .wide
+                    #ticker
+                    {
+                        float: left;
+                    }
+
+    body
+        .wide
+            #chart_wrap
+                {
+                    clear: left;
+                    float: left;
+                }
+
+    body
+        .wide
+            #data_wrapper
+                {
+                    float: right;
+                    margin-top: -48px;
+                }
+
+    body
+        .wide
+            #controls,
+
+    body
+        .wide
+            #calculators
+                {
+                    padding-left: 400px;
+                    padding-right: 400px;
+                }
+
+    body
+        .wide
+            .footerinfo
+                br
+                {
+                    display: none;
+                }
+
+    body
+        .wide
+            .footerinfo
+                .donate
+                {
+                    padding-right: 1em;
+                }
+            }
+ 
+/* User select behavior: prevents pesky selection highlighting on double clicks, etc. */
+body
+{
+    /* Disable user selection of anything */
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+/* Enable user-select for certan things */
+#footer
+    p,
+    td,
+    h4
+    {
+        -webkit-user-select: text;
+        -khtml-user-select: text;
+        -moz-user-select: text;
+        -o-user-select: text;
+        user-select: text;
+    }
+
+/* Custom selection color */
+::selection,
+    ::-moz-selection
+        {
+            background-color: #933;
+            color: #fff;
+        }
+
+/* Theming */
+body
+    .light
+        {
+            background-color: #f5f6f7;
+            color: #191919;
+        }
+
+body
+    .light
+        a
+        {
+            color: #000;
+        }
+
+body
+    .light
+        a
+            :hover
+                {
+                    color: #9C6;
+                }
+
+body
+    .light
+        #nav > li
+            :hover
+                {
+                    color: #fff;
+                }
+
+body
+    .light
+        .header
+            {
+                border-bottom-color: #333;
+            }
+
+body
+    .light
+        .controls
+            {
+                border-top-color: #333;
+            }
+
+body
+    .light
+        #controls
+            {
+                border-top-color: #333;
+            }
+
+body
+    .light
+        #calculators
+        {
+            border-top-color: #333;
+        }
+
+body
+    .light
+        #calculators
+            input
+                {
+                    border-color: #f6f7fb;
+                    background-color: #f6f7fb;
+                    color: #191919;
+                }
+
+body
+    .light
+        #calculators
+            input
+                :hover
+                {
+                    border-color: #363;
+                }
+
+body
+    .light
+        #calculators
+            input
+                :focus
+                {
+                    border-color: #9c6;
+                }
+
+body
+    .light
+        #ticker
+            table
+                tr
+                    th
+                    {
+                        color: #000;
+                    }
+
+body
+    .light
+        #chart_control
+        {
+            color: #babbbf;
+        }
+
+body
+    .light
+        #chart_control
+            :hover
+            {
+                color: #191919;
+            }
+
+body
+    .light
+        #chart_control
+            a
+            {
+                color: #babbbf;
+            }
+
+body
+    .light
+        #chart_control
+            :hover
+                a
+                {
+                    color: #000;
+                }
+
+body
+    .light
+        #chart_control
+            a
+                :hover
+                {
+                    color: #2d9515;
+                }
+
+body
+    .light
+        #chart_control
+            a
+                .current
+                {
+                    color: #191919;
+                }
+
+body
+    .light
+        #timesales
+            table
+                tr
+                    td
+                    {
+                        border-bottom-color: #f6f7fb;
+                    }
+
+/* Style for alternating trades */
+body
+    .light
+        #timesales
+            table
+                tr
+                    .alt
+                        td
+                        {
+                            background-color: #e1e3e9;
+                        }
+
+body
+    .light
+        #orderbook
+            table
+                tr
+                    th,
+
+body
+    .light
+        #timesales
+            table
+                tr
+                    th
+                    {
+                        color: #000;
+                        border-bottom-color: #666;
+                    }
+
+body
+    .light
+        #orderbook
+            table
+                tr
+                    td
+                        .priceCell
+                        {
+                            background-color: #e1e3e9;
+                        }
+
+body
+    .light
+        #orderbook
+            table
+                tr
+                    td
+                        .sumCell
+                        {
+                            color: #666;
+                        }
+
+body
+    .light
+        #orderbook
+            table
+                tr
+                    :hover
+                        td
+                        {
+                            background-color: #ccc;
+                        }
+
+body
+.light
+#orderbook
+    table
+        tr
+            .newOrder
+                td
+                {
+                    color: #0066cc;
+                }
+
+body
+    .light
+        #orderbook
+            table
+                tr
+                    .wholeNumberRow
+                        td
+                        {
+                            color: #000;
+                        }
+
+body
+    .light
+        .data
+            table
+                tr
+                    :hover
+                        td
+                        {
+                            background-color: #333;
+                        }
+
+body
+.light
+#console
+{
+    background-color: #fff;
+    border-top-color: #333;
+}
+
+body
+.light
+#footer
+p
+.footerinfo
+{
+    background-color: #f6f7fb;
+}
+
+body
+.light
+.success
+{
+    background-color: #393;
+    color: #fff;
+}
+
+body
+.light
+.warning
+{
+    background-color: #D9CC0C;
+    color: #000;
+}
+
+body
+.light
+.error
+{
+    background-color: #933;
+    color: #fff;
+}
+
+body
+.light
+.depth
+{
+    color: #ccc;
+}
+
+body
+.light
+.trade
+{
+    color: #fff;
+    background-color: #001729;
+}
+
+body
+.light
+.up
+{
+    color: #2d9515;
+}
+
+body
+.light
+.down
+{
+    color: #F00017;
+}
+
+body
+.light
+.high
+{
+    background-color: #2d9515;
+    color: #fff;
+}
+
+body
+.light
+.low
+{
+    background-color: #B00017;
+    color: #fff;
+}
+
+body
+.light
+.gold
+{
+    color: #ffc200;
+}
+
+body
+    .light
+        .insig
+            {
+                color: #babbbf;
+                /*d2d4d9*/
+            }
+
+body
+    .light
+        #ws_modal
+            {
+                background-color: #933;
+                border-color: #000;
+                color: #F4FFE4;
+            }
+
+body
+    .light
+        #ws_modal
+            a
+            {
+                color: #fff;
+            }
+
+body
+    .light
+        #info_modal
+        {
+            background-color: #eee;
+            border-color: #D9CC0C;
+            color: #161616;
+        }
+
+body
+    .light
+        #info_modal
+            a
+            {
+                color: #933;
+            }
+
+body
+    .light
+        #info_modal
+            a
+            :hover
+            {
+                color: #000;
+            }

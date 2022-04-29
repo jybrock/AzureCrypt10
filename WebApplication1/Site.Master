@@ -1,0 +1,197 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebApplication1.SiteMaster" %>
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+<%@ Register assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" namespace="System.Web.UI.DataVisualization.Charting" tagprefix="asp" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head id="Head1" runat="server">
+    <meta charset="utf-8" />
+    <title>
+        <%: Page.Title %>
+        - Cryptocap 
+    </title>
+    <% if (false) { %><%--Designer support--%>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <% } %>
+    <asp:PlaceHolder runat="server">
+        <%: Styles.Render("~/Content/themes/base/css", "~/Content/css") %>
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <script src="/Scripts/cm/socket.io.min.js"></script>
+    <script src="/Scripts/cm/all_tickers.json"></script>
+    <script src="/Scripts/cm/ticker_201304100057.js"></script>
+    <script src="/Scripts/cm/ajax.socket.io.min.js"></script>
+    <script src="/Scripts/cm/sockjs-0.3.min.js"></script>
+    <script src="Scripts/cm/history.json"></script>
+    <%--<script src="Scripts/cm/ticker_201304100058.js"></script>--%>
+    <script src="Scripts/cm/list_public.json"></script>
+    <script src="Scripts/cm/addthis_widget.js"></script>
+    <script src="Scripts/cm/idkey.json"></script>
+    <script src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>
+
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+</head>
+<body>
+    <form runat="server">
+    
+        <asp:ScriptManager runat="server" AjaxFrameworkMode="Explicit">
+        <Scripts>
+            <asp:ScriptReference Name="MsAjaxBundle" />
+            <asp:ScriptReference Name="jquery" />
+            <asp:ScriptReference Name="jquery.ui.combined" />
+            <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+            <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+            <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+            <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+            <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+            <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+            <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+            <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+            <asp:ScriptReference Name="WebFormsBundle" />
+        </Scripts>
+        </asp:ScriptManager>
+        
+        <header>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p class="site-title">
+                    <img id="Img1" runat="server" src="~/Images/Crypto/cryptocap-0.1.0-logo.png" width="350" />
+                    <a runat="server" href="~/"></a>
+                </p>
+            </div>
+            <div class="float-right" style="padding:15px">
+                    <section id="login">
+                        <asp:LoginView runat="server" ViewStateMode="Disabled">
+                            <AnonymousTemplate>
+                                <ul>
+                                    <li><a id="registerLink" runat="server" href="~/Account/Register.aspx">New Account</a></li>
+                                    <li><a id="loginLink" runat="server" href="~/Account/Login.aspx">Login</a></li>
+                                    <li><a id="DashboardLink" runat="server" href="~/Admin/default.aspx">Investors</a></li>
+                                </ul>
+                            </AnonymousTemplate>
+                            <LoggedInTemplate>
+                                <p>
+                                    Hello, 
+                                    <a runat="server" class="username" href="~/Account/ChangePassword.aspx" title="Change password">
+                                        <asp:LoginName runat="server" CssClass="username" />
+                                    </a>
+                                    !
+                                <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" />
+                                </p>
+                            </LoggedInTemplate>
+                        </asp:LoginView>
+                    </section>
+                    <nav>
+                    <ul id="menu">
+                        <li><a runat="server" href="~/">Crypto Capital</a></li>
+                        <li><a runat="server" href="~/Privacy.aspx">Privacy Policy</a></li>
+                        <li><a runat="server" href="~/Currency.aspx">Deposits</a></li>
+                        <li><a runat="server" href="~/Security.aspx">Security</a></li>
+                        <li><a runat="server" href="~/FAQ.aspx">FAQ</a></li>
+                        <li><a runat="server" href="~/About.aspx">About</a></li>
+                        <li><a runat="server" href="~/Contact.aspx">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        </header>
+    <section id="body">
+        <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
+        <section class="content-wrapper main-content clear-fix">
+            <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+        </section>
+    </section>
+    <footer>
+        <span>
+            Copyright Crypto Capital &copy; <%: DateTime.Now.Year %> - All rights reserved.
+        </span>
+        <br />
+        <span>
+           <asp:Label ID="labelUnixTime" runat="server" Text="UnixTime">: Unix Time.</asp:Label>
+        </span>
+        <div class="content-wrapper" >     
+            <section class="float-right">
+                <ul id="social">
+                    <li><a href="http://facebook.com" class="facebook">Facebook</a></li>
+                    <li><a href="http://twitter.com" class="twitter">Twitter</a></li>
+                </ul>
+            </section>
+        </div>
+    </footer>
+    <section style="background-color:#e2e2e2; text-align:center;">
+    <asp:MultiView ID="cryptoContent" runat="server" ActiveViewIndex="0" >
+
+        <asp:View ID="MtGox" runat="server" >
+            <br />
+            <asp:Label ID="labelMtGox" runat="server" BorderStyle="None">
+                Mt.Gox
+            </asp:Label>
+            <br />
+            <a href="https://data.mtgox.com/api/2/BTCUSD/money/ticker" title="To ignite monitor into flames">Click here</a>
+            <br />
+            <asp:Label ID="labelTestTickerOutput" runat="server" BorderStyle="None" Text="TestingLabelTickerOutput">
+                Testing data
+            </asp:Label>
+            <br />
+            <%--<div style="table-layout: auto; border-collapse: collapse; border-spacing: inherit; empty-cells: show; caption-side: top; visibility: visible; display: block; float: left; clear: inherit; cursor: crosshair; overflow: auto; clip: rect(auto, auto, auto, auto); width: auto; height: auto; top: auto; right: auto; bottom: auto; left: auto; position: relative; z-index: auto; padding: inherit; margin: auto; border-style: none; border-width: inherit; border-color: #00FFFF; line-height: inherit; vertical-align: middle; text-align: center; text-indent: inherit; white-space: normal; word-spacing: normal; letter-spacing: normal; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">--%>
+            <section id="ticker" class="all" style="text-align: center; word-spacing: inherit; letter-spacing: inherit; white-space: inherit; text-indent: inherit; vertical-align: middle; line-height: inherit; width: auto; height: auto; top: auto; right: auto; bottom: inherit; left: auto; position: relative; z-index: auto; visibility: visible; display: block; float: inherit; clear: both; cursor: crosshair; overflow: auto; clip: rect(auto, auto, auto, auto); table-layout: auto; border-collapse: collapse; border-spacing: inherit; empty-cells: show; caption-side: top"></section>
+             <%--  <style scoped>
+                    @import url("./Content/style_201304011150.css");
+                </style>--%>
+            <%--</div>--%>
+<%--            <asp:Chart ID="chartMtGox" runat="server" BackColor="Transparent" Height="350px" Palette="Fire" Width="800px" BackImageTransparentColor="Transparent" BorderlineColor="Azure">
+                <series>
+                    <asp:Series ChartType="Stock" Name="seriesMtGox1" YValuesPerPoint="4" ChartArea="chartareaMtGox1">
+                    </asp:Series>
+                </series>
+                <chartareas>
+                    <asp:ChartArea Name="chartareaMtGox1">
+                    </asp:ChartArea>
+                </chartareas>
+                <BorderSkin BackColor="Transparent" BorderColor="Transparent" PageColor="Honeydew" />
+            </asp:Chart>--%>
+            <br />
+            
+            <asp:Button ID="buttonCampBX" runat="server" 
+            CommandArgument="CampBX" 
+            CommandName="SwitchViewByID"
+            Text="View CampBX" />
+        </asp:View><!-- End MtGox View -->
+
+        <asp:View ID="CampBX" runat="server">
+            <br />
+            <asp:Label ID="labelCampBX" runat="server" BorderStyle="None">
+                CampBX
+            </asp:Label>
+            <br />
+            <br />
+
+            <asp:Button ID="buttonBitstamp" runat="server" 
+                CommandArgument="Bitstamp" 
+                CommandName="SwitchViewByID"
+                Text="View Bitstamp" />
+        </asp:View><!-- End CampBX View -->
+
+        <asp:View ID="Bitstamp" runat="server">
+            <br />
+            <asp:Label ID="labelBitstamp" runat="server" BorderStyle="None">
+                Bitstamp
+            </asp:Label>
+            <br />
+            <br />
+            
+            <asp:Button ID="buttonMtGox" runat="server" 
+                CommandArgument="MtGox" 
+                CommandName="SwitchViewByID"
+                Text="View Mt.Gox" />
+        </asp:View><!-- End Bitstamp View -->
+
+    </asp:MultiView>
+    </section>
+    </form>
+</body>
+</html>
